@@ -1,5 +1,11 @@
 import os
+import shelve
 
-os.getcwd()
+text = open("/home/ale/Desktop/automateTheBoringStuffWithPython/text.txt")
 
-os.path.abspath(".")
+print(text.readlines())
+
+shelfFile = shelve.open('mydata')
+cats = ['Zophie', 'Pooka', 'Simon']
+shelfFile['cats'] = cats
+shelfFile.close()

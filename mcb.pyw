@@ -12,8 +12,11 @@ mcbShelf = shelve.open('mcb')
 
    # TODO: fix saving to shelve
 if len(sys.argv) == 3 and sys.argv[1] == "save":
-    print("Clipboard saved")
     mcbShelf[sys.argv[2]] = pyperclip.paste()
+    print("Clipboard saved")
+elif len(sys.argv) == 3 and sys.argv[1] == "delete":
+    del mcbShelf[sys.argv[2]]
+    print(sys.argv[2] + " deleted")
 elif len(sys.argv) == 2:
     # List keys
     if sys.argv[1].lower() == 'list':

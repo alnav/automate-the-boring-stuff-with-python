@@ -25,4 +25,3 @@ def commaCode(list):
             string += list[i] + ", "
 
 commaCode(["1", "2", "3", "4", "5"])
-commaCode()

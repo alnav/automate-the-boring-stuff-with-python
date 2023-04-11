@@ -1,7 +1,7 @@
 import os
 import shelve
 
-text = open("/home/ale/Desktop/automateTheBoringStuffWithPython/text.txt")
+text = open("text.txt")
 
 print(text.readlines())
 

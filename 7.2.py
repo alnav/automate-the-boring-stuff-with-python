@@ -4,21 +4,22 @@ If no other arguments are passed other than the string to strip, then whitespace
 Otherwise, the characters specified in the second argument to the function will be removed from the string.
 """
 
+# TODO:
+# Fix: Currently not stripping letters from start and end of strings, but removing all given characters
+
 import re
 
-stripRe = re.compile(r'[^\s]+')
-
-s1 = " this is a sting that needs to be stripped "
+s1 = " this is a string that needs to be stripped "
 s2 = " this is one starting with space"
 s3 = "this is one ending with space"
 s4 = "  multiple spaces   "
 
-mo1 = stripRe.match(s1)
-mo2 = stripRe.match(s2)
-mo3 = stripRe.match(s3)
-mo4 = stripRe.match(s4)
+test_strings = [s1, s2, s3, s4]
 
-print(mo1)
-print(mo2)
-print(mo3)
-print(mo4)
+def regex_strip(string_to_strip, char_to_remove = ' '):
+    pattern = '[' + char_to_remove + ']'
+    mod_string = re.sub(pattern, '', string_to_strip)
+    return mod_string
+
+for string_item in test_strings:
+    print(regex_strip(string_item))
